@@ -1,0 +1,29 @@
+{% extends 'wrapper.html' %}
+
+{% block content %}
+    {% if posts|length == 0 %}
+    <h2>Not found</h2>
+    {% else %}
+    {% for post in posts %}
+    <div class="jumbotron">
+      <h1 style="text-transform: uppercase" class="display-4">{{ post['author'] }}</h1>
+      <p class="lead">{{ post['post'] }}</p>
+      <hr class="my-4">
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{{ post['link'] }}" role="button">Learn more</a>
+      </p>
+    </div>
+    {% endfor %}
+    {% if how %}
+    <nav aria-label="...">
+      <ul class="pagination">
+        {% for i in range(how) %}
+        <li class="page-item">
+          <a class="page-link" href="/find/{{ i }}?query={{ session['query'] }}">{{ i + 1 }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+    {% endif %}
+{% endblock %}
