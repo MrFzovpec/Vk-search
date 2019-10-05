@@ -5,7 +5,7 @@ import requests, json
 domains = ['kinopoisk', 'countryballs_re', 'itpedia_youtube']
 count = 20
 
-token = '1b5b12671b5b12671b5b12676a1b31d64311b5b1b5b126747b25945950b5e9e27619952'
+token = 'token'
 
 app = Flask(__name__)
 how = 0
